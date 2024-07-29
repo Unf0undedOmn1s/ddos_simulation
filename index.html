@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DDoS Simulation Dashboard</title>
+</head>
+<body>
+    <h1>DDoS Attack Simulation</h1>
+    <form id="attack-form">
+        <label for="traffic">Traffic:</label>
+        <input type="number" id="traffic" name="traffic" required>
+        <br>
+        <label for="target_ip">Target IP:</label>
+        <input type="text" id="target_ip" name="target_ip" required>
+        <br>
+        <button type="button" onclick="startAttack()">Start Attack</button>
+        <button type="button" onclick="stopAttack()">Stop Attack</button>
+    </form>
+    <p id="status"></p>
+    <script>
+        async function startAttack() {
+            const traffic = document.getElementById('traffic').value;
+            const target_ip = document.getElementById('target_ip').value;
+            const response = await fetch('/start-attack', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({traffic, target_ip})
+            });
+            const result = await response.json();
+            document.getElementById('status').innerText = result.status;
+        }
+
+        async function stopAttack() {
+            const response = await fetch('/stop-attack', {method: 'POST'});
+            const result = await response.json();
+            document.getElementById('status').innerText = result.status;
+        }
+    </script>
+</body>
+</html>
