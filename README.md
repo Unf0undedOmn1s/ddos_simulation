@@ -19,8 +19,9 @@ IV) Logging: Python's built-in logging module with RotatingFileHandler
 
 Installation and Setup:
 I) Python 3 Made on Thonny - Python IDE, can use alternatives such as VSC, etc.
-II) Flask (pip install Flask) 
-III) hping3 (sudo apt-get install hping3)
+II) Flask (pip install Flask).
+III) hping3 (sudo apt-get install hping3).
+IV) Runs on localhost (127.0.0.1:5000) when installed!
 
 Disclaimer!!!
 This tool is intended for educational purposes only. Use it responsibly and only in environments where you have explicit permission to conduct such simulations. Misuse of DDoS tools can lead to legal consequences.
