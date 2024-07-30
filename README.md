@@ -37,4 +37,18 @@ The DDoS Attack Simulation Dashboard provides a user-friendly platform to simula
 2. **Flask**: Install Flask using pip:
    ```bash
    pip install Flask
+3. **hping3**: Install hping3:
+    ```bash
+   sudo apt-get install hping3
+Run the application by navigating to its folder using the terminal: **python3 app.py**
+Usage
+
+    Open a web browser and navigate to http://127.0.0.1:5000.
+    Use the dashboard to set the target IP address and control the traffic intensity.
+    Start and stop the DDoS attack simulation using the provided buttons.
+    Monitor the logs for detailed information on the attack parameters and status updates.
+
+Disclaimer
+
+This tool is intended for educational purposes only. Use it responsibly and only in environments where you have explicit permission to conduct such simulations. Misuse of DDoS tools can lead to legal consequences.
 
