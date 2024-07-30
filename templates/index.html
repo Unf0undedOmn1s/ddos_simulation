@@ -1,22 +1,139 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DDoS Simulation Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"],
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button.start {
+            background-color: #28a745;
+            color: white;
+        }
+        button.start:hover {
+            background-color: #218838;
+        }
+        button.stop {
+            background-color: #dc3545;
+            color: white;
+        }
+        button.stop:hover {
+            background-color: #c82333;
+        }
+        p#status {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 20px;
+        }
+       
+        }
+        .info {
+            font-family: 'Comfortaa', cursive;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #000000;
+        }
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .box {
+            width: 45%;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>DDoS Attack Simulation</h1>
+        <h1>DDoS Attack Simulation Dashboard</h1>
         <form id="attack-form">
-            <label for="traffic">Traffic:</label>
-            <input type="number" id="traffic" name="traffic" required>
-            <label for="target_ip">Target IP:</label>
-            <input type="text" id="target_ip" name="target_ip" required>
-            <button type="button" onclick="startAttack()">Start Attack</button>
-            <button type="button" onclick="stopAttack()">Stop Attack</button>
+            <div class="form-group">
+                <label for="traffic">Traffic Intensity* (TCP SYN):</label>
+                <input type="number" id="traffic" name="traffic" placeholder="Enter traffic intensity" required>
+            </div>
+            <div class="form-group">
+                <label for="target_ip">Target IP Address (IPv4):</label>
+                <input type="text" id="target_ip" name="target_ip" placeholder="Enter target IP address" required>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="start" onclick="startAttack()">Start Attack</button>
+                <button type="button" class="stop" onclick="stopAttack()">Stop Attack</button>
+            </div>
         </form>
         <p id="status"></p>
+        <div class="box-container">
+            <div class="box"> Intensity*: Evaluates how much data is being sent to the target over a certain period and is typically used to simulate the load that a server might experience during a DDoS attack.</div>
+            <div class="box">Understanding DDoS Attacks is pretty crucial especially in the Cybersecurity field, IT Management and maintaining the availability of online services.</div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Marios Grivas. All rights reserved.</p>
+        </footer>
     </div>
     <script>
         async function startAttack() {
