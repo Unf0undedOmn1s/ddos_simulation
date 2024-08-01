@@ -2,6 +2,8 @@
 
 The DDoS Attack Simulation Dashboard is a web application designed to simulate Distributed Denial of Service (DDoS) attacks in a controlled environment. This educational tool is intended for cybersecurity professionals, IT managers, and students to understand how DDoS attacks function and how they impact target systems. The application leverages the hping3 tool to generate synthetic traffic, providing insights into the effects of varying attack intensities and enabling users to test their mitigation strategies.
 
+![ddos_sim](https://github.com/user-attachments/assets/1764f85f-d0c2-48d0-9080-563e5b20228b)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
