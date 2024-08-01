@@ -33,13 +33,20 @@ The DDoS Attack Simulation Dashboard provides a user-friendly platform to simula
 
 ## Installation and Setup
 
-1. **Python 3**: Ensure Python 3 is installed on your system. This project was developed using Thonny - Python IDE, but alternatives such as VS Code can be used.
+1. **Python 3**: Install Python 
+    ```bash
+   sudo apt install python3 python3-pip
 2. **Flask**: Install Flask using pip:
    ```bash
-   pip install Flask
+   pip3 install Flask==2.2.3
 3. **hping3**: Install hping3:
     ```bash
    sudo apt-get install hping3
+**Commands in Linux terminal**:
+ ```bash
+git clone https://github.com/Unf0undedOmn1s/ddos_simulation
+cd ddos_simulation
+python app.py / python3 app.py
 
 ## Usage
 Run the application by navigating to its folder using the terminal: **python3 app.py**
