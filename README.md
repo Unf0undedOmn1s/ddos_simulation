@@ -42,11 +42,11 @@ The DDoS Attack Simulation Dashboard provides a user-friendly platform to simula
 3. **hping3**: Install hping3:
     ```bash
    sudo apt-get install hping3
-**Commands in Linux terminal**:
- ```bash
-git clone https://github.com/Unf0undedOmn1s/ddos_simulation
-cd ddos_simulation
-python app.py / python3 app.py
+Linux Terminal:
+    ```bash
+    git clone https://github.com/Unf0undedOmn1s/ddos_simulation
+    cd ddos_simulation
+    python app.py / python3 app.py
 
 ## Usage
 Run the application by navigating to its folder using the terminal: **python3 app.py**
